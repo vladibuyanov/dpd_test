@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block tittle %}
+Main page
+{% endblock %}
+
+
+{% block body %}
+    <section class="jumbotron text-center">
+        <div class="container">
+        {% if output_web %}
+            {% for el in output_web %}
+                <h5>Доверие</h5>
+                <p>{{ el.trust }}</p>
+                <h5>Инициатива</h5>
+                <p>{{ el.initiative }}</p>
+                <h5>Компетентность</h5>
+                <p>{{ el.competence }}</p>
+                <h5>Автономия</h5>
+                <p>{{ el.autonomy }}</p>
+                <h5>Идентичность</h5>
+                <p>{{ el.identity }}</p>
+            {% endfor %}
+        {% else %}
+            <p>Результатов нет</p>
+        {% endif %}
+        </div>
+    </section>
+{% endblock %}
